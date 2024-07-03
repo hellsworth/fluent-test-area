@@ -1,4 +1,4 @@
-use std::env;
+use std::{env, fs};
 use fluent::{FluentBundle, FluentValue, FluentResource, FluentArgs};
 //use fluent_fallback::Localization;
 //use fluent_resmgr::ResourceManager;
@@ -7,12 +7,14 @@ use unic_langid::LanguageIdentifier;
 fn main() {
     //let cur_dir = env::current_dir().expect("Unable to find the current directory.").display().to_string();
     //println!("{}", cur_dir);
-
+/*
 let ftl_string = String::from("
 hello-world = Hello, world!
 intro = Welcome, { $name }.
 ");
+*/
 
+    let ftl_string = fs::read_to_string("messages.ftl").expect("Failed to read file");
     let res_mgr = FluentResource::try_new(ftl_string).expect("Failed to parse an FTL string.");
     //let res_mgr = ResourceManager::new(cur_dir);
     let langid: LanguageIdentifier = "en-US".parse().expect("Failed to parse.");

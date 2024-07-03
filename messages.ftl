@@ -1,2 +1,3 @@
 # messages.ftl
-hello-world = Hello, {name}!
+hello-world = Hello, world!
+intro = Welcome, { $name }.

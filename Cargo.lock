@@ -46,6 +46,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "fluent"
+version = "0.16.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bb74634707bebd0ce645a981148e8fb8c7bccd4c33c652aeffd28bf2f96d555a"
+dependencies = [
+ "fluent-bundle",
+ "unic-langid",
+]
+
+[[package]]
 name = "fluent-bundle"
 version = "0.15.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -323,6 +333,7 @@ dependencies = [
 name = "test-code-2"
 version = "0.1.0"
 dependencies = [
+ "fluent",
  "fluent-fallback",
  "fluent-resmgr",
  "unic-langid",
