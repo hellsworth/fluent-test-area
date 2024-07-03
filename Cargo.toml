@@ -1,0 +1,11 @@
+[package]
+name = "test-code-2"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+fluent-fallback = "0.7.1"
+fluent-resmgr = "0.0.7"
+unic-langid = "0.9.5"
