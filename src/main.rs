@@ -1,9 +1,13 @@
+use std::env;
 use fluent_fallback::Localization;
 use fluent_resmgr::ResourceManager;
 use unic_langid::LanguageIdentifier;
 
 fn main() {
-    let res_mgr = ResourceManager::new(".".to_string());
+    let cur_dir = env::current_dir().expect("Unable to find the current directory.").display().to_string();
+    //println!("{}", cur_dir);
+
+    let res_mgr = ResourceManager::new(cur_dir);
     let langid: LanguageIdentifier = "en-US".parse().expect("Failed to parse.");
     let loc = Localization::with_env(
         vec![
