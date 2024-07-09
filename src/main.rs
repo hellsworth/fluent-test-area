@@ -14,7 +14,10 @@ intro = Welcome, { $name }.
 ");
 */
 
-    let ftl_string = fs::read_to_string("messages.ftl").expect("Failed to read file");
+    let messages_string = fs::read_to_string("messages.ftl").expect("Failed to read file");
+    let extra_string = fs::read_to_string("messages-1.ftl").expect("Failed to read file");
+    let ftl_string = messages_string + &extra_string;
+    println!("this is my concatenated strings{}", ftl_string);
     let res_mgr = FluentResource::try_new(ftl_string).expect("Failed to parse an FTL string.");
     //let res_mgr = ResourceManager::new(cur_dir);
     let langid: LanguageIdentifier = "en-US".parse().expect("Failed to parse.");
